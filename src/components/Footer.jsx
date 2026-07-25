@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Feather, Heart } from 'lucide-react';
+import { Feather, Heart, ShieldCheck } from 'lucide-react';
 
-export default function Footer({ setActiveTab }) {
+export default function Footer({ setActiveTab, onOpenPrivacy }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -36,10 +36,10 @@ export default function Footer({ setActiveTab }) {
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
+          {/* Col 2: Navigation & Legal */}
           <div className="space-y-3">
             <h4 className="font-sans-ui text-sm font-bold text-[#F4F8F3] uppercase tracking-wider">
-              Navigazione
+              Navigazione & Legale
             </h4>
             <ul className="space-y-2 font-sans-ui text-xs text-[#B3C4AB]">
               <li>
@@ -55,6 +55,17 @@ export default function Footer({ setActiveTab }) {
               <li>
                 <button onClick={() => setActiveTab('catalog')} className="hover:text-white transition-colors cursor-pointer">
                   Collezione Pronta
+                </button>
+              </li>
+              <li>
+                <button onClick={() => setActiveTab('custom')} className="hover:text-white transition-colors cursor-pointer">
+                  Progetti Su Misura
+                </button>
+              </li>
+              <li className="pt-1 border-t border-[#3B4C3E]">
+                <button onClick={onOpenPrivacy} className="hover:text-[#E6D8B8] transition-colors cursor-pointer flex items-center gap-1.5 text-[11px]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#7C947B]" />
+                  <span>Privacy & Cookie Policy (GDPR)</span>
                 </button>
               </li>
             </ul>

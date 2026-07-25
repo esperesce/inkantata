@@ -9,10 +9,13 @@ import CustomRequest from './components/Contact/CustomRequest';
 import CartDrawer from './components/Cart/CartDrawer';
 import Toast from './components/UI/Toast';
 import Footer from './components/Footer';
+import CookieBanner from './components/Legal/CookieBanner';
+import PrivacyModal from './components/Legal/PrivacyModal';
 import { Feather, Sparkles } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home'); // 'home' | 'configurator' | 'catalog' | 'custom'
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
   // Configurator state
   const [config, setConfig] = useState({
@@ -102,8 +105,19 @@ export default function App() {
         {/* Global Toast Banner */}
         <Toast />
 
+        {/* GDPR Cookie Consent Banner */}
+        <CookieBanner onOpenPrivacy={() => setShowPrivacyModal(true)} />
+
+        {/* Privacy Policy Modal */}
+        {showPrivacyModal && (
+          <PrivacyModal onClose={() => setShowPrivacyModal(false)} />
+        )}
+
         {/* Studio Footer */}
-        <Footer setActiveTab={setActiveTab} />
+        <Footer 
+          setActiveTab={setActiveTab}
+          onOpenPrivacy={() => setShowPrivacyModal(true)}
+        />
 
       </div>
     </CartProvider>
