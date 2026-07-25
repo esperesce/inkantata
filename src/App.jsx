@@ -5,13 +5,14 @@ import HeroHome from './components/Home/HeroHome';
 import LivePreview from './components/Configurator/LivePreview';
 import ControlPanel from './components/Configurator/ControlPanel';
 import ProductCatalog from './components/Catalog/ProductCatalog';
+import CustomRequest from './components/Contact/CustomRequest';
 import CartDrawer from './components/Cart/CartDrawer';
 import Toast from './components/UI/Toast';
 import Footer from './components/Footer';
 import { Feather, Sparkles } from 'lucide-react';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home'); // 'home' | 'configurator' | 'catalog'
+  const [activeTab, setActiveTab] = useState('home'); // 'home' | 'configurator' | 'catalog' | 'custom'
 
   // Configurator state
   const [config, setConfig] = useState({
@@ -19,7 +20,7 @@ export default function App() {
     paperStyle: 'acquerello-sage',
     inkColor: 'nero', // strictly 'nero' or 'oro'
     ribbonColor: 'verde-salvia', // for bookmarks
-    writingStyle: 'caveat',
+    writingStyle: 'corsivo', // 'typewriter' | 'corsivo'
     message: 'Leggere è volare senza ali.',
     recipient: 'Giulia'
   });
@@ -39,9 +40,12 @@ export default function App() {
         {/* Main Content Area */}
         <main className="flex-1">
           
-          {/* VIEW 1: CLEAN WELCOMING HOMEPAGE */}
+          {/* VIEW 1: CLEAN HIGH-IMPACT HOMEPAGE */}
           {activeTab === 'home' && (
-            <HeroHome onStartCustomizer={handleStartCustomizer} />
+            <HeroHome 
+              onStartCustomizer={handleStartCustomizer}
+              onNavigate={(tab) => setActiveTab(tab)}
+            />
           )}
 
           {/* VIEW 2: MECHANICAL & FUNCTIONAL CONFIGURATOR */}
@@ -83,6 +87,11 @@ export default function App() {
           {/* VIEW 3: SIGNATURE CATALOG COLLECTION */}
           {activeTab === 'catalog' && (
             <ProductCatalog onLaunchCustomizer={() => setActiveTab('configurator')} />
+          )}
+
+          {/* VIEW 4: CUSTOM NON-CATALOG REQUEST SCREEN */}
+          {activeTab === 'custom' && (
+            <CustomRequest />
           )}
 
         </main>

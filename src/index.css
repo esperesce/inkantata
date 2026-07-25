@@ -17,13 +17,15 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Handwriting Fonts ONLY for Card/Bookmark Preview Text */
-.font-handwriting-caveat {
-  font-family: 'Caveat', cursive;
+/* Macchina da Scrivere Option */
+.font-courier {
+  font-family: 'Courier Prime', 'Special Elite', monospace;
 }
 
-.font-handwriting-dancing {
-  font-family: 'Dancing Script', cursive;
+/* Scrittura a Mano Corsiva Elegante Option */
+.font-corsivo {
+  font-family: 'Great Vibes', 'Sacramento', 'Caveat', cursive;
+  letter-spacing: 0.02em;
 }
 
 /* Light Natural Watercolor Backgrounds & Subtle Paper Effects */

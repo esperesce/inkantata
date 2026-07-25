@@ -57,13 +57,13 @@ export default function ControlPanel({ config, setConfig }) {
           <h2 className="font-sans-ui text-xl font-bold text-[#2D342E]">
             Configuratore Prodotto
           </h2>
-          <p className="text-xs font-sans-ui text-[#738274]">
+          <p className="text-xs font-courier text-[#738274]">
             Personalizza ogni dettaglio in tempo reale
           </p>
         </div>
         <div className="text-right">
-          <span className="text-[10px] font-sans-ui uppercase text-[#738274] font-semibold block">Prezzo</span>
-          <span className="font-sans-ui text-2xl text-[#4A5D4E] font-extrabold">
+          <span className="text-[10px] font-courier uppercase text-[#738274] font-bold block">Prezzo</span>
+          <span className="font-courier text-2xl text-[#4A5D4E] font-bold">
             €{currentTotalPrice.toFixed(2)}
           </span>
         </div>
@@ -71,9 +71,9 @@ export default function ControlPanel({ config, setConfig }) {
 
       {/* STEP 1: Tipologia Prodotto */}
       <div className="space-y-2">
-        <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
+        <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
           <Layers className="w-4 h-4 text-[#7C947B]" />
-          <span>1. Seleziona Prodotto</span>
+          <span>01. SELEZIONA PRODOTTO</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
           {PRODUCT_TYPES.map((type) => {
@@ -90,7 +90,7 @@ export default function ControlPanel({ config, setConfig }) {
                 }`}
               >
                 <span className="font-sans-ui text-sm font-bold block">{type.name}</span>
-                <span className="text-xs font-sans-ui text-[#738274] mt-0.5 block">€{type.basePrice.toFixed(2)}</span>
+                <span className="text-xs font-courier text-[#738274] mt-0.5 block">€{type.basePrice.toFixed(2)}</span>
               </button>
             );
           })}
@@ -99,9 +99,9 @@ export default function ControlPanel({ config, setConfig }) {
 
       {/* STEP 2: Tipo di Carta & Acquerello */}
       <div className="space-y-2">
-        <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
+        <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
           <Sparkles className="w-4 h-4 text-[#7C947B]" />
-          <span>2. Sfondo Acquerello & Carta</span>
+          <span>02. SFONDO ACQUERELLO & CARTA</span>
         </label>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {PAPER_STYLES.map((paper) => {
@@ -120,7 +120,7 @@ export default function ControlPanel({ config, setConfig }) {
                 <div className="flex items-center justify-between">
                   <span className="font-sans-ui text-xs font-bold">{paper.name}</span>
                   {paper.price > 0 && (
-                    <span className="text-[10px] font-sans-ui text-[#4A5D4E] font-bold">
+                    <span className="text-[10px] font-courier text-[#4A5D4E] font-bold">
                       +€{paper.price.toFixed(2)}
                     </span>
                   )}
@@ -136,9 +136,9 @@ export default function ControlPanel({ config, setConfig }) {
 
       {/* STEP 3: STRICTLY RESTRICTED INK COLORS (NERO O ORO) */}
       <div className="space-y-2">
-        <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
+        <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
           <Palette className="w-4 h-4 text-[#7C947B]" />
-          <span>3. Colore Inchiostro (Solo Nero o Oro)</span>
+          <span>03. COLORE INCHIOSTRO (NERO O ORO)</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
           {INK_COLORS.map((ink) => {
@@ -162,7 +162,7 @@ export default function ControlPanel({ config, setConfig }) {
                 </div>
                 <div className="text-left">
                   <span className="font-sans-ui text-xs font-bold block">{ink.name}</span>
-                  <span className="text-[10px] font-sans-ui text-[#738274]">{ink.description}</span>
+                  <span className="text-[10px] font-courier text-[#738274]">{ink.description}</span>
                 </div>
               </button>
             );
@@ -170,12 +170,12 @@ export default function ControlPanel({ config, setConfig }) {
         </div>
       </div>
 
-      {/* STEP 4: RIBBON COLOR SELECTION (SPECIFICALLY FOR BOOKMARKS ONLY) */}
+      {/* STEP 4: RIBBON COLOR SELECTION */}
       {config.productType === 'bookmark' && (
         <div className="space-y-2 pt-1 animate-fade-in">
-          <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
+          <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
             <Feather className="w-4 h-4 text-[#7C947B]" />
-            <span>4. Colore Nastro (Per Segnalibro)</span>
+            <span>04. COLORE NASTRO</span>
           </label>
           <div className="flex flex-wrap gap-2">
             {RIBBON_COLORS.map((ribbon) => {
@@ -203,11 +203,11 @@ export default function ControlPanel({ config, setConfig }) {
         </div>
       )}
 
-      {/* STEP 5: Stile di Scrittura Calligrafica */}
+      {/* STEP 5: STILE DI SCRITTURA */}
       <div className="space-y-2">
-        <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
+        <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E] flex items-center gap-1.5">
           <Type className="w-4 h-4 text-[#7C947B]" />
-          <span>Stile Calligrafia</span>
+          <span>05. STILE DI SCRITTURA</span>
         </label>
         <div className="grid grid-cols-2 gap-3">
           {HANDWRITING_STYLES.map((style) => {
@@ -217,14 +217,15 @@ export default function ControlPanel({ config, setConfig }) {
                 key={style.id}
                 type="button"
                 onClick={() => setConfig((prev) => ({ ...prev, writingStyle: style.id }))}
-                className={`p-3 text-left border rounded-xl transition-all cursor-pointer ${
+                className={`p-3.5 text-left border rounded-xl transition-all cursor-pointer ${
                   isSelected
                     ? 'border-[#4A5D4E] bg-[#F2F7F1] text-[#2D342E]'
                     : 'border-[#E2EBE0] bg-white text-[#5C685D] hover:border-[#B3C4AB]'
                 }`}
               >
-                <span className={`text-xl block ${style.fontClass}`}>
-                  {style.name}
+                <span className="font-sans-ui text-xs font-bold block text-[#2D342E]">{style.name}</span>
+                <span className={`block mt-1 truncate ${style.fontClass}`}>
+                  {config.message ? config.message.slice(0, 16) : 'Anteprima'}
                 </span>
               </button>
             );
@@ -235,11 +236,11 @@ export default function ControlPanel({ config, setConfig }) {
       {/* STEP 6: Messaggio Personalizzato */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <label className="text-xs font-sans-ui uppercase font-bold tracking-wider text-[#4A5D4E]">
-            Messaggio Personalizzato
+          <label className="text-xs font-courier uppercase font-bold tracking-wider text-[#4A5D4E]">
+            MESSAGGIO PERSONALIZZATO
           </label>
-          <span className="text-[10px] font-sans-ui text-[#738274]">
-            {config.message.length} / 120 caratteri
+          <span className="text-[10px] font-courier text-[#738274]">
+            {config.message.length} / 120
           </span>
         </div>
 
@@ -267,7 +268,7 @@ export default function ControlPanel({ config, setConfig }) {
         />
 
         <div className="pt-1">
-          <label className="text-xs font-sans-ui text-[#738274] block mb-1">
+          <label className="text-xs font-courier text-[#738274] block mb-1">
             Nome Destinatario (Opzionale):
           </label>
           <input
@@ -275,15 +276,15 @@ export default function ControlPanel({ config, setConfig }) {
             value={config.recipient}
             onChange={(e) => setConfig((prev) => ({ ...prev, recipient: e.target.value }))}
             placeholder="es. Giulia"
-            className="w-full input-minimal-it text-xs font-sans-ui text-[#2D342E]"
+            className="w-full input-minimal-it text-xs font-courier text-[#2D342E]"
           />
         </div>
       </div>
 
       {/* Add To Cart CTA */}
       <div className="pt-4 border-t border-[#E5ECE2] flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="text-xs font-sans-ui text-[#738274] text-center sm:text-left">
-          Lavorato a mano in Italia • Spedizione rapida
+        <div className="text-xs font-courier text-[#738274] text-center sm:text-left">
+          LAVORATO A MANO IN ITALIA • SPEDIZIONE RAPIDA
         </div>
 
         <button

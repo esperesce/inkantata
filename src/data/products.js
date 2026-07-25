@@ -73,7 +73,7 @@ export const RIBBON_COLORS = [
   { id: 'oro-lucido', name: 'Oro Lucido', hex: '#C5A059' }
 ];
 
-// WRITING STYLES REQUIREMENT: Macchina da Scrivere & Scrittura a Mano
+// WRITING STYLES: Macchina da Scrivere vs Scrittura a Mano Corsiva
 export const HANDWRITING_STYLES = [
   {
     id: 'typewriter',
@@ -81,9 +81,9 @@ export const HANDWRITING_STYLES = [
     fontClass: 'font-courier text-sm sm:text-base font-medium tracking-tight'
   },
   {
-    id: 'handwriting',
-    name: 'Scrittura a Mano',
-    fontClass: 'font-handwriting-caveat text-2xl sm:text-3xl'
+    id: 'corsivo',
+    name: 'Scrittura a Mano Corsiva',
+    fontClass: 'font-corsivo text-3xl sm:text-4xl leading-snug font-normal'
   }
 ];
 
@@ -115,8 +115,8 @@ export const CATALOG_PRODUCTS = [
     price: 14.00,
     tag: 'Personalizzabile',
     image: 'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=800',
-    description: 'Segnalibro in carta cotone con frase a scelta in inchiostro nero o dorato.',
-    details: ['Scrittura a scelta', 'Scelta nastro', 'Confezione regalo inclusa']
+    description: 'Segnalibro in carta cotone con frase in corsivo a tua scelta in inchiostro nero o dorato.',
+    details: ['Scrittura corsiva', 'Scelta nastro', 'Confezione regalo inclusa']
   },
   {
     id: 'cat-4',
